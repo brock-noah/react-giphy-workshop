@@ -2,11 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// JSX
+// JavaScript that looks like HTML. It's not HTML, it's JavaScript!
+//
+// <div /> === React.createElement('div')
+//
+// You write JS now, and JS (React) will tell the
+// HTML page how to change the elments (DOM) for you.
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <App
+    // props are passed into a component
+    // TODO: pass a prop named `header` into `App`
+    
+  />, document.getElementById('root'));
+
+// Is actually
+// React.createElement('App', { header: 'Handful of gifs' })
+
+// When a component receives props,
+// it's a function getting arguments.
+// You'll have these available later when you define
+// what the `App` function or class looks like.
+
+// JSX is a convient mixture of JS and HTML
+// Easier to write event handlers (JS) and
+// the HTML elments they are attached to.
