@@ -25,10 +25,10 @@ class App extends Component {
             // console.log('Hello World')
 
             // TODO: render the `header` prop
-            
+            this.props.header
           }
           {/* TODO: render the `header` prop inside an `h1` element */}
-          
+          <h1>{this.props.header}</h1>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.

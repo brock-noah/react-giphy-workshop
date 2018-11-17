@@ -15,7 +15,7 @@ ReactDOM.render(
   <App
     // props are passed into a component
     // TODO: pass a prop named `header` into `App`
-    
+    header='Handful of gifs'
   />, document.getElementById('root'));
 
 // Is actually
