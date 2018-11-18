@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// The simplest way to define what to render
+// is to use a function. It takes a single argument,
+// called props. Data and functions enter your component
+// from props, they give a component everything it needs.
+// JSX elements must have one parent.
+//
+// TODO: write a function named `Image` that
+//       renders a `h2` and `img` tag
+
 class App extends Component {
   // To get React to print something to the screen,
   // define a method called `render` on the class.
@@ -29,6 +38,8 @@ class App extends Component {
           }
           {/* TODO: render the `header` prop inside an `h1` element */}
           <h1>{this.props.header}</h1>
+          {/* TODO: replace `img` with your own `Image` component */}
+          
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
