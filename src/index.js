@@ -19,7 +19,7 @@ ReactDOM.render(
   />, document.getElementById('root'));
 
 // Is actually
-// React.createElement('App', { header: 'Handful of gifs' })
+// React.createElement(App, { header: 'Handful of gifs' })
 
 // When a component receives props,
 // it's a function getting arguments.
