@@ -10,6 +10,14 @@ import './App.css';
 //
 // TODO: write a function named `Image` that
 //       renders a `h2` and `img` tag
+function Image(props) {
+  return (
+    <React.Fragment>
+      <h2>{props.title}</h2>
+      <img src={props.src} className="App-logo" alt={props.title} />
+    </React.Fragment>
+  )
+}
 
 class App extends Component {
   // To get React to print something to the screen,
@@ -39,8 +47,7 @@ class App extends Component {
           {/* TODO: render the `header` prop inside an `h1` element */}
           <h1>{this.props.header}</h1>
           {/* TODO: replace `img` with your own `Image` component */}
-          
-          <img src={logo} className="App-logo" alt="logo" />
+          <Image src={logo} title="Some Image" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
