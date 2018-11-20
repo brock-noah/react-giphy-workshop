@@ -26,6 +26,8 @@ function Search(props) {
     <React.Fragment>
       <label>Search</label>
       <input value={props.value} onChange={props.onChange} type='search' />
+      {/* TODO: add props.children */}
+      
     </React.Fragment>
   )
 }
@@ -76,6 +78,7 @@ class App extends Component {
           {/* TODO: use a `Search` component, pass in the
                     props it will need, the search value and
                     a way to change the search value. */}
+          {/* TODO: add children to the Seach Component */}
           <Search
             value={this.state.searchTerm}
             onChange={this.setSearchTerm}
