@@ -27,7 +27,7 @@ function Search(props) {
       <label>Search</label>
       <input value={props.value} onChange={props.onChange} type='search' />
       {/* TODO: add props.children */}
-      
+      {props.children}
     </React.Fragment>
   )
 }
@@ -82,7 +82,11 @@ class App extends Component {
           <Search
             value={this.state.searchTerm}
             onChange={this.setSearchTerm}
-          />
+          >
+            <button onClick={alert.bind(null, this.state.searchTerm)}>
+              Go
+            </button>
+          </Search>
           {/* TODO: replace `img` with your own `Image` component */}
           <Image src={logo} title="Some Image" />
           <p>
