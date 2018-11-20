@@ -19,7 +19,28 @@ function Image(props) {
   )
 }
 
+// TODO: write a React function that has an
+//       `label` and `input` element
+
+
+
 class App extends Component {
+
+  // class components can have properties and methods
+  // this.props  object, defined by parent
+  // this.state  object, defined by component
+  // this.setState  function from React.Component, how to set this.state
+
+  // TODO: set an initial search term
+  state = {
+    
+  }
+
+  setSearchTerm = event => {
+    // TODO: use `this.setState` to update the search term
+    
+  }
+
   // To get React to print something to the screen,
   // define a method called `render` on the class.
   render() {
@@ -46,6 +67,10 @@ class App extends Component {
           }
           {/* TODO: render the `header` prop inside an `h1` element */}
           <h1>{this.props.header}</h1>
+          {/* TODO: use a `Search` component, pass in the
+                    props it will need, the search value and
+                    a way to change the search value. */}
+          
           {/* TODO: replace `img` with your own `Image` component */}
           <Image src={logo} title="Some Image" />
           <p>
