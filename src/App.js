@@ -21,8 +21,14 @@ function Image(props) {
 
 // TODO: write a React function that has an
 //       `label` and `input` element
-
-
+function Search(props) {
+  return (
+    <React.Fragment>
+      <label>Search</label>
+      <input value={props.value} onChange={props.onChange} type='search' />
+    </React.Fragment>
+  )
+}
 
 class App extends Component {
 
@@ -33,12 +39,12 @@ class App extends Component {
 
   // TODO: set an initial search term
   state = {
-    
+    searchTerm: 'Initial Search'
   }
 
   setSearchTerm = event => {
     // TODO: use `this.setState` to update the search term
-    
+    this.setState({ searchTerm: event.target.value })
   }
 
   // To get React to print something to the screen,
@@ -70,7 +76,10 @@ class App extends Component {
           {/* TODO: use a `Search` component, pass in the
                     props it will need, the search value and
                     a way to change the search value. */}
-          
+          <Search
+            value={this.state.searchTerm}
+            onChange={this.setSearchTerm}
+          />
           {/* TODO: replace `img` with your own `Image` component */}
           <Image src={logo} title="Some Image" />
           <p>
