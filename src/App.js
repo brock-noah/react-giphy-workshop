@@ -29,7 +29,7 @@ const fetchGifs = gifSeacher('REPLACE_ME_API_KEY')
 const add = (arg1, arg2, arg3) => {
   return arg1 + arg2 + arg3
 }
-console.log(add(10, 1, 1))
+// console.log(add(10, 1, 1))
 // becomes
 const addCurry = arg1 => arg2 => arg3 => {
   return arg1 + arg2 + arg3
@@ -88,8 +88,6 @@ class App extends Component {
     this.setState({ gifs })
   }
 
-
-  // 0 TODO: curry onSearch to take a value
   onSearch = value => event => {
     fetchGifs(value)
       .then(this.setGifs)
@@ -123,10 +121,6 @@ class App extends Component {
             value={this.state.searchTerm}
             onChange={this.setSearchTerm}
           >
-            {/* 1 TODO: Invoke this.onSearch once with the search value
-                        from state. When the button is clicked,
-                        it will invoke the next function with the event,
-                        firing off all the functions and getting a result */}
             <button onClick={this.onSearch(this.state.searchTerm)}>
               Go
             </button>
