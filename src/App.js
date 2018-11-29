@@ -20,6 +20,11 @@ const fetchGifs = gifSeacher('REPLACE_ME_API_KEY')
 // We use these techniques to bundle stateful data together
 //    alpha = func1 => func2 => func3 => {logic}
 //    alpha('value_one')(2)('value_3')
+// The functions invoke will from left to right.
+// Once the farthest right function is called,
+// all of the code will evaluate. Data on the left-end-side
+// are things we know ahead of time, while data on the
+// right-end-side are things we will learn later.
 
 const add = (arg1, arg2, arg3) => {
   return arg1 + arg2 + arg3
