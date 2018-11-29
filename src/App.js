@@ -13,6 +13,32 @@ import gifSeacher from 'react-giphy-workshop-gif-searcher'
 const fetchGifs = gifSeacher('REPLACE_ME_API_KEY')
 // console.log(fetchGifs('hello world').then(console.log))
 
+
+// A function that returns a function: partial evaluation.
+// A function that takes a single argument and
+// returns a function that takes a single argument: curry.
+// We use these techniques to bundle stateful data together
+//    alpha = func1 => func2 => func3 => {logic}
+//    alpha('value_one')(2)('value_3')
+
+const add = (arg1, arg2, arg3) => {
+  return arg1 + arg2 + arg3
+}
+console.log(add(10, 1, 1))
+// becomes
+const addCurry = arg1 => arg2 => arg3 => {
+  return arg1 + arg2 + arg3
+}
+const addCurryImplictReturn = arg1 => arg2 => arg3 => (
+  arg1 + arg2 + arg3
+)
+//console.log(addCurryImplictReturn(10)(1)(1))
+
+// we can reuse functions
+const plusOnehundred = addCurryImplictReturn(0)(100)
+//console.log(plusOnehundred(500))
+
+
 // The simplest way to define what to render
 // is to use a function. It takes a single argument,
 // called props. Data and functions enter your component
@@ -44,7 +70,6 @@ class App extends Component {
   // this.state  object, defined by component
   // this.setState  function from React.Component, how to set this.state
 
-  // 0 TODO: add an empty array for gifs into state
   state = {
     searchTerm: 'Initial Search',
     gifs: [],
@@ -54,19 +79,14 @@ class App extends Component {
     this.setState({ searchTerm: event.target.value })
   }
 
-  // 1 TODO: Add a function that sets state for the gifs array
   setGifs = gifs => {
     this.setState({ gifs })
   }
 
-  // 2 TODO: Add a function that will call fetchGifs (the
-  //         function we initilalized in the top level),
-  //         it should take your search word state.
-  //         Once we have this data, supply it to the
-  //         funtion you wrote above in 1 TODO
+
+  // 0 TODO: curry onSearch to take a value
   onSearch = event => {
     fetchGifs(this.state.searchTerm)
-      // .then(data => { this.setGifs(data) })
       .then(this.setGifs)
       .catch(console.error)
   }
@@ -98,14 +118,14 @@ class App extends Component {
             value={this.state.searchTerm}
             onChange={this.setSearchTerm}
           >
-          {/* 3 TODO: Search for gifs when I click this button.
-                      After this step, we need to render those gifs. */}
+            {/* 1 TODO: Invoke this.onSearch once with the search value
+                        from state. When the button is clicked,
+                        it will invoke the next function with the event,
+                        firing off all the functions and getting a result */}
             <button onClick={this.onSearch}>
               Go
             </button>
           </Search>
-          {/* 4 TODO: map over the gifs array in state
-                      and pass each gif to the Image component */}
           {this.state.gifs.map(gif =>
             <Image src={gif.image.url} title={gif.title} />
           )}
