@@ -90,8 +90,8 @@ class App extends Component {
 
 
   // 0 TODO: curry onSearch to take a value
-  onSearch = event => {
-    fetchGifs(this.state.searchTerm)
+  onSearch = value => event => {
+    fetchGifs(value)
       .then(this.setGifs)
       .catch(console.error)
   }
@@ -127,7 +127,7 @@ class App extends Component {
                         from state. When the button is clicked,
                         it will invoke the next function with the event,
                         firing off all the functions and getting a result */}
-            <button onClick={this.onSearch}>
+            <button onClick={this.onSearch(this.state.searchTerm)}>
               Go
             </button>
           </Search>
