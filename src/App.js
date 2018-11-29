@@ -8,12 +8,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 // 0 TODO: add the import for the gif searcher
-
+import gifSeacher from 'react-giphy-workshop-gif-searcher'
 
 // 1 TODO: change this value and init the
 //         imported function with an API key
-const fetchGifs = undefined
-
+const fetchGifs = gifSeacher('REPLACE_ME_API_KEY')
+// console.log(fetchGifs('hello world').then(console.log))
 
 // The simplest way to define what to render
 // is to use a function. It takes a single argument,

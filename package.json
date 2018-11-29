@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-giphy-workshop-gif-searcher": "git://github.com/brock-noah/react-giphy-workshop-gif-searcher.git",
     "react-scripts": "2.1.1"
   },
   "scripts": {
