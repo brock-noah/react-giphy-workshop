@@ -1,6 +1,19 @@
+// how you can link files together is with
+// the import syntax for es2015+
+// imports can be anything
+//   - object, function, string, etc
+// console.log(React)
+// you can deconstruct keys of an import
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+// 0 TODO: add the import for the gif searcher
+
+
+// 1 TODO: change this value and init the
+//         imported function with an API key
+const fetchGifs = undefined
+
 
 // The simplest way to define what to render
 // is to use a function. It takes a single argument,
