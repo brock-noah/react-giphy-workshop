@@ -7,11 +7,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// 0 TODO: add the import for the gif searcher
 import gifSeacher from 'react-giphy-workshop-gif-searcher'
 
-// 1 TODO: change this value and init the
-//         imported function with an API key
+
 const fetchGifs = gifSeacher('REPLACE_ME_API_KEY')
 // console.log(fetchGifs('hello world').then(console.log))
 
@@ -46,14 +44,25 @@ class App extends Component {
   // this.state  object, defined by component
   // this.setState  function from React.Component, how to set this.state
 
-  // TODO: set an initial search term
+  // 0 TODO: add an empty array for gifs into state
   state = {
-    searchTerm: 'Initial Search'
+    searchTerm: 'Initial Search',
+    
   }
 
   setSearchTerm = event => {
     this.setState({ searchTerm: event.target.value })
   }
+
+  // 1 TODO: Add a function that sets state for the gifs array
+
+
+  // 2 TODO: Add a function that will call fetchGifs (the
+  //         function we initilalized in the top level),
+  //         it should take your search word state.
+  //         Once we have this data, supply it to the
+  //         funtion you wrote above in 1 TODO
+
 
   // To get React to print something to the screen,
   // define a method called `render` on the class.
@@ -82,10 +91,14 @@ class App extends Component {
             value={this.state.searchTerm}
             onChange={this.setSearchTerm}
           >
+          {/* 3 TODO: Search for gifs when I click this button.
+                      After this step, we need to render those gifs. */}
             <button onClick={alert.bind(null, this.state.searchTerm)}>
               Go
             </button>
           </Search>
+          {/* 4 TODO: map over the gifs array in state
+                      and pass each gif to the Image component */}
           <Image src={logo} title="Some Image" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
