@@ -47,7 +47,7 @@ class App extends Component {
   // 0 TODO: add an empty array for gifs into state
   state = {
     searchTerm: 'Initial Search',
-    
+    gifs: [],
   }
 
   setSearchTerm = event => {
@@ -55,14 +55,21 @@ class App extends Component {
   }
 
   // 1 TODO: Add a function that sets state for the gifs array
-
+  setGifs = gifs => {
+    this.setState({ gifs })
+  }
 
   // 2 TODO: Add a function that will call fetchGifs (the
   //         function we initilalized in the top level),
   //         it should take your search word state.
   //         Once we have this data, supply it to the
   //         funtion you wrote above in 1 TODO
-
+  onSearch = event => {
+    fetchGifs(this.state.searchTerm)
+      // .then(data => { this.setGifs(data) })
+      .then(this.setGifs)
+      .catch(console.error)
+  }
 
   // To get React to print something to the screen,
   // define a method called `render` on the class.
@@ -93,13 +100,15 @@ class App extends Component {
           >
           {/* 3 TODO: Search for gifs when I click this button.
                       After this step, we need to render those gifs. */}
-            <button onClick={alert.bind(null, this.state.searchTerm)}>
+            <button onClick={this.onSearch}>
               Go
             </button>
           </Search>
           {/* 4 TODO: map over the gifs array in state
                       and pass each gif to the Image component */}
-          <Image src={logo} title="Some Image" />
+          {this.state.gifs.map(gif =>
+            <Image src={gif.image.url} title={gif.title} />
+          )}
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
