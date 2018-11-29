@@ -75,9 +75,11 @@ class App extends Component {
   // this.state  object, defined by component
   // this.setState  function from React.Component, how to set this.state
 
+  // 0 TODO: Add a favorites array to state
   state = {
     searchTerm: 'Initial Search',
     gifs: [],
+
   }
 
   setSearchTerm = event => {
@@ -86,6 +88,14 @@ class App extends Component {
 
   setGifs = gifs => {
     this.setState({ gifs })
+  }
+
+  // We have seen how this.setState takes an object,
+  // it can also take a function. React gives you
+  // the previous state state as a arguement.
+  // 1 TODO: write a function that adds one favorite to the others
+  addToFavorites = favoriteGif => {
+
   }
 
   onSearch = value => event => {
@@ -125,9 +135,12 @@ class App extends Component {
               Go
             </button>
           </Search>
+          {/* 2 TODO: add a button to save a gif to your favorites */}
           {this.state.gifs.map(gif =>
             <Image src={gif.image.url} title={gif.title} />
           )}
+          {/* 3 TODO: render your favorites */}
+          
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
