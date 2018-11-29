@@ -79,7 +79,7 @@ class App extends Component {
   state = {
     searchTerm: 'Initial Search',
     gifs: [],
-
+    favorites: [logo],
   }
 
   setSearchTerm = event => {
@@ -95,8 +95,24 @@ class App extends Component {
   // the previous state state as a arguement.
   // 1 TODO: write a function that adds one favorite to the others
   addToFavorites = favoriteGif => {
-
+    this.setState(
+      state => ({
+        favorites: [...state.favorites, favoriteGif],
+      })
+    )
   }
+  // Other solutions
+  // addToFavoritesA = favoriteGif => {
+  //   const nextFavorites = this.state.favorites.concat(favoriteGif)
+  //   this.setState({ favorites: nextFavorites })
+  // }
+  // addToFavoritesB = favoriteGif => {
+  //   this.setState(
+  //     state => ({
+  //       favorites: state.favorites.concat(favoriteGif)
+  //     })
+  //   )
+  // }
 
   onSearch = value => event => {
     fetchGifs(value)
@@ -137,10 +153,17 @@ class App extends Component {
           </Search>
           {/* 2 TODO: add a button to save a gif to your favorites */}
           {this.state.gifs.map(gif =>
-            <Image src={gif.image.url} title={gif.title} />
+            <React.Fragment key={gif.image.url}>
+              <Image src={gif.image.url} title={gif.title} />
+              <button
+                onClick={event => this.addToFavorites(gif.image.url)}
+              >❤</button>
+            </React.Fragment>
           )}
           {/* 3 TODO: render your favorites */}
-          
+          {this.state.favorites.map((url, index) =>
+            <Image src={url} key={url + index} />
+          )}
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
