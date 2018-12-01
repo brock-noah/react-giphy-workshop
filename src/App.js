@@ -18,6 +18,7 @@ const fetchGifs = gifSeacher('REPLACE_ME_API_KEY')
 // called props. Data and functions enter your component
 // from props, they give a component everything it needs.
 // JSX elements must have one parent.
+
 function Image(props) {
   return (
     <React.Fragment>
