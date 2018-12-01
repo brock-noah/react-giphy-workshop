@@ -17,14 +17,12 @@ function Image(props) {
   )
 }
 
-// 2 TODO: write a React function that has an
-//       `label` and `input` element
 function Search(props) {
   return (
     <React.Fragment>
       <label>Search</label>
       <input value={props.value} onChange={props.onChange} type='search' />
-      {/* TODO: add props.children */}
+      {/* 1 TODO: add props.children */}
       
     </React.Fragment>
   )
@@ -37,13 +35,11 @@ class App extends Component {
   // this.state  object, defined by component
   // this.setState  function from React.Component, how to set this.state
 
-  // 0 TODO: set an initial search term
   state = {
     searchTerm: 'Initial Search'
   }
 
   setSearchTerm = event => {
-    // 1 TODO: use `this.setState` to update the search term
     this.setState({ searchTerm: event.target.value })
   }
 
@@ -70,10 +66,7 @@ class App extends Component {
             this.props.header
           }
           <h1>{this.props.header}</h1>
-          {/* 3 TODO: use a `Search` component, pass in the
-                    props it will need, the search value and
-                    a way to change the search value. */}
-          {/* TODO: add children to the Seach Component */}
+          {/* 0 TODO: add children to the Seach Component */}
           <Search
             value={this.state.searchTerm}
             onChange={this.setSearchTerm}
