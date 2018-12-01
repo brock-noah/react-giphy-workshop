@@ -14,12 +14,12 @@ import App from './App';
 ReactDOM.render(
   <App
     // props are passed into a component
-    // TODO: pass a prop named `header` into `App`
+    // 0 TODO: pass a prop named `header` into `App`
     header='Handful of gifs'
   />, document.getElementById('root'));
 
 // Is actually
-// React.createElement('App', { header: 'Handful of gifs' })
+// React.createElement(App, { header: 'Handful of gifs' })
 
 // When a component receives props,
 // it's a function getting arguments.
