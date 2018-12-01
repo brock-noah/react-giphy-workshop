@@ -1,3 +1,13 @@
+Start by generating a new React app: https://github.com/facebook/create-react-app
+
+React Documentation: https://reactjs.org/docs/getting-started.html
+
+JavaScript ES6 Help: https://github.com/michaelghinrichs/javascript-cheatsheet
+
+Package around Giphy JS SDK: https://github.com/brock-noah/react-giphy-workshop-gif-searcher
+
+## Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
