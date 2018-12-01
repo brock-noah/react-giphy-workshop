@@ -24,10 +24,10 @@ class App extends Component {
             // the `return` value of the component.
             // console.log('Hello World')
 
-            // TODO: render the `header` prop
+            // 1 TODO: render the `header` prop
             
           }
-          {/* TODO: render the `header` prop inside an `h1` element */}
+          {/* 2 TODO: render the `header` prop inside an `h1` element */}
           
           <img src={logo} className="App-logo" alt="logo" />
           <p>

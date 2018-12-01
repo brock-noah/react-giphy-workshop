@@ -14,7 +14,7 @@ import App from './App';
 ReactDOM.render(
   <App
     // props are passed into a component
-    // TODO: pass a prop named `header` into `App`
+    // 0 TODO: pass a prop named `header` into `App`
     
   />, document.getElementById('root'));
 
