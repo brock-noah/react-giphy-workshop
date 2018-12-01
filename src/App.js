@@ -33,10 +33,10 @@ class App extends Component {
             // the `return` value of the component.
             // console.log('Hello World')
 
-            // TODO: render the `header` prop
+            // 1 TODO: render the `header` prop
             this.props.header
           }
-          {/* TODO: render the `header` prop inside an `h1` element */}
+          {/* 2 TODO: render the `header` prop inside an `h1` element */}
           <h1>{this.props.header}</h1>
           {/* TODO: replace `img` with your own `Image` component */}
           
