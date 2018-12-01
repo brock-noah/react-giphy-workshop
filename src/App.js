@@ -8,7 +8,7 @@ import './App.css';
 // from props, they give a component everything it needs.
 // JSX elements must have one parent.
 //
-// TODO: write a function named `Image` that
+// 0 TODO: write a function named `Image` that
 //       renders a `h2` and `img` tag
 function Image(props) {
   return (
@@ -40,13 +40,10 @@ class App extends Component {
             // This is how we evaluate JavaScript inside
             // the `return` value of the component.
             // console.log('Hello World')
-
-            // TODO: render the `header` prop
             this.props.header
           }
-          {/* TODO: render the `header` prop inside an `h1` element */}
           <h1>{this.props.header}</h1>
-          {/* TODO: replace `img` with your own `Image` component */}
+          {/* 1 TODO: replace `img` with your own `Image` component */}
           <Image src={logo} title="Some Image" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
