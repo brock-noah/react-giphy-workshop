@@ -14,7 +14,6 @@ import App from './App';
 ReactDOM.render(
   <App
     // props are passed into a component
-    // 0 TODO: pass a prop named `header` into `App`
     header='Handful of gifs'
   />, document.getElementById('root'));
 
