@@ -20,6 +20,7 @@ const fetchGifs = gifSeacher('REPLACE_ME_API_KEY')
 // called props. Data and functions enter your component
 // from props, they give a component everything it needs.
 // JSX elements must have one parent.
+
 function Image(props) {
   return (
     <React.Fragment>
@@ -46,7 +47,6 @@ class App extends Component {
   // this.state  object, defined by component
   // this.setState  function from React.Component, how to set this.state
 
-  // TODO: set an initial search term
   state = {
     searchTerm: 'Initial Search'
   }
