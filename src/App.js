@@ -7,9 +7,7 @@ import './App.css';
 // called props. Data and functions enter your component
 // from props, they give a component everything it needs.
 // JSX elements must have one parent.
-//
-// TODO: write a function named `Image` that
-//       renders a `h2` and `img` tag
+
 function Image(props) {
   return (
     <React.Fragment>
@@ -19,7 +17,7 @@ function Image(props) {
   )
 }
 
-// TODO: write a React function that has an
+// 2 TODO: write a React function that has an
 //       `label` and `input` element
 function Search(props) {
   return (
@@ -37,13 +35,13 @@ class App extends Component {
   // this.state  object, defined by component
   // this.setState  function from React.Component, how to set this.state
 
-  // TODO: set an initial search term
+  // 0 TODO: set an initial search term
   state = {
     searchTerm: 'Initial Search'
   }
 
   setSearchTerm = event => {
-    // TODO: use `this.setState` to update the search term
+    // 1 TODO: use `this.setState` to update the search term
     this.setState({ searchTerm: event.target.value })
   }
 
@@ -67,20 +65,16 @@ class App extends Component {
             // This is how we evaluate JavaScript inside
             // the `return` value of the component.
             // console.log('Hello World')
-
-            // TODO: render the `header` prop
             this.props.header
           }
-          {/* TODO: render the `header` prop inside an `h1` element */}
           <h1>{this.props.header}</h1>
-          {/* TODO: use a `Search` component, pass in the
+          {/* 3 TODO: use a `Search` component, pass in the
                     props it will need, the search value and
                     a way to change the search value. */}
           <Search
             value={this.state.searchTerm}
             onChange={this.setSearchTerm}
           />
-          {/* TODO: replace `img` with your own `Image` component */}
           <Image src={logo} title="Some Image" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
